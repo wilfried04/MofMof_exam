@@ -1,0 +1,75 @@
+<%= form_with(model: room, local: true) do |form| %>
+  <% if room.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(room.errors.count, "error") %> prohibited this room from being saved:</h2>
+
+      <ul>
+      <% room.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label"object" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label "loyer" %>
+    <%= form.text_field :rent %>
+  </div>
+
+  <div class="field">
+    <%= form.label "residence" %>
+    <%= form.text_field :address %>
+  </div>
+
+  <div class="field">
+    <%= form.label "Number of years" %>
+    <%= form.text_field :age %>
+  </div>
+
+  <div class="field line">
+    <%= form.label "pro forma" %>
+    <%= form.text_area :content %>
+  </div>
+
+  <hr>
+
+  
+  <% n = 0 %>
+  <%= form.fields_for :stations do |s| %>
+  <h3>
+  <%= "nearest station #{n += 1}" %>
+  </h3>
+  
+  <div class="field">
+    <%= s.label "line name" %>
+    <%= s.text_field :line %>
+  </div>
+
+  <div class="field">
+    <%= s.label "station name" %>
+    <%= s.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= s.label "number of steps" %>
+    <%= s.text_field :minute %>
+  </div>
+  <% end %>
+  
+ 
+  
+  <% if action_name == "new" %>
+  <div class="actions">
+    <%= form.submit "Register" %>
+  </div>
+  <% else %>
+  <div class="actions">
+    <%= form.submit "Update." %>
+  </div>
+  <% end %>
+<% end %>

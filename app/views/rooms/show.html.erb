@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+<h2>Browse</2>
+<p>
+  <strong>object name:</strong>
+  <%= @room.name %>
+</p>
+
+<p>
+  <strong>leasing:</strong>
+  <%= @room.rent %>
+</p>
+
+<p>
+  <strong>residence:</strong>
+  <%= @room.address %>
+</p>
+
+<p>
+  <strong>Number of years</strong>
+  <%= @room.age %>
+</p>
+
+<p>
+  <strong>pro forma</strong>
+  <%= @room.content %>
+</p>
+
+<hr>
+<% n = 0 %>
+<% @stations.each do |station| %>
+<h3>
+<%= "nearest station#{n += 1}" %>
+</h3>
+
+
+<p>
+  <strong>line name</strong>
+  <%= station.line %>
+</p>
+
+<p>
+  <strong>station name</strong>
+  <%= station.name %>
+</p>
+
+<p>
+  <strong>number of steps</strong>
+  <%= station.minute %>
+</p>
+
+<% end %>
+
+<%= link_to 'editing', edit_room_path(@room) %> |
+<%= link_to 'return', rooms_path %>
