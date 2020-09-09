@@ -43,6 +43,3 @@ Environ une semaine après le début des tests.
 Lorsque vous commencez l'émission, vous devez d'abord cloner ce dépôt et le créer dans votre compte (public, c'est bien). Dans ce cas, veillez à renommer le dépôt** en lui donnant un nom approprié (par exemple, rat-giraffe).
 
 Créez une nouvelle branche, travaillez dessus, et faites une demande d'extraction vers votre dépôt (faites attention à ne pas faire de demande d'extraction vers la source du clone).
-
-
-Traduit avec www.DeepL.com/Translator (version gratuite)
